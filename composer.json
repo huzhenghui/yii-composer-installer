@@ -1,0 +1,19 @@
+{
+  "name": "huzhenghui/yii-composer-installer",
+  "description": "",
+  "type": "library",
+  "authors": [
+    {
+      "name": "胡争辉",
+      "email": "hu@daonao.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "huzhenghui\\hello\\": "src"
+    }
+  }
+}
