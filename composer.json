@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "huzhenghui\\yii-composer-installer\\": "src"
+      "huzhenghui\\yii\\composer\\installer\\": "src"
     }
   }
 }
