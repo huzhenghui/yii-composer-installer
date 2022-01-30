@@ -26,6 +26,9 @@
     ],
     "post-install-cmd": [
       "huzhenghui\\yii\\composer\\installer\\Installer::postInstall"
+    ],
+    "post-create-project-cmd": [
+      "huzhenghui\\yii\\composer\\installer\\Installer::postInstall"
     ]
   },
   "autoload": {
