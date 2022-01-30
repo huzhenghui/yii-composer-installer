@@ -1,7 +1,7 @@
 {
   "name": "huzhenghui/yii-composer-installer",
   "description": "",
-  "type": "library",
+  "type": "project",
   "authors": [
     {
       "name": "胡争辉",
@@ -11,9 +11,32 @@
   "require": {
     "yiisoft/yii2-app-basic": "~2.0"
   },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "huzhenghui\\yii\\composer\\installer\\Installer::postUpdate"
+    ],
+    "post-install-cmd": [
+      "huzhenghui\\yii\\composer\\installer\\Installer::postInstall"
+    ]
+  },
   "autoload": {
     "psr-4": {
       "huzhenghui\\yii\\composer\\installer\\": "src"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }
