@@ -10,7 +10,10 @@ use yii\composer\Installer as YiiComposerInstaller;
 class Installer extends LibraryInstaller
 {
 
-    public static function postUpdate($event)
+    /**
+     * @param Event $event
+     */
+    public static function postUpdate($event): void
     {
         YiiComposerInstaller::copyFiles(array(
             "./vendor/yiisoft/yii2-app-basic/yii" => "./yii",
@@ -30,7 +33,7 @@ class Installer extends LibraryInstaller
     /**
      * @param Event $event
      */
-    public static function postInstall($event)
+    public static function postInstall($event): void
     {
         YiiComposerInstaller::generateCookieValidationKey("config/web.php");
     }
