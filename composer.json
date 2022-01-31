@@ -31,7 +31,48 @@
     ],
     "post-create-project-cmd": [
       "huzhenghui\\yii\\composer\\installer\\Installer::postInstall"
+    ],
+    "update-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer update"
+    ],
+    "install-command": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer install"
+    ],
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php yii serve"
+    ],
+    "phpstan-generate-baseline": [
+      "Composer\\Config::disableProcessTimeout",
+      "phpstan analyse --ansi --memory-limit=1G --autoload-file=./vendor/autoload.php --configuration=./generate-baseline.neon --generate-baseline"
+    ],
+    "phpstan": [
+      "Composer\\Config::disableProcessTimeout",
+      "phpstan analyse --ansi --memory-limit=1G --autoload-file=./vendor/autoload.php --configuration=./phpstan.neon"
+    ],
+    "clear-all": [
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./assets/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./config/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./controllers/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./runtime/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./vendor/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./views/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./web/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./widgets/",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./composer.lock",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./phpstan-baseline.neon",
+      "/usr/local/opt/trash-cli/bin/trash --force -- ./yii"
     ]
+  },
+  "scripts-descriptions": {
+    "update-command": "composer update",
+    "install-command": "composer install",
+    "serve": "php yii serve",
+    "phpstan-generate-baseline": "phpstan generate baseline.neon file.",
+    "phpstan": "phpstan analyse",
+    "clear-all": "Clear all temporary file"
   },
   "autoload": {
     "psr-4": {
